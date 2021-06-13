@@ -4,7 +4,7 @@ Exercício voltado para a criação de um chat entre vários usuários baseado n
 
 Requisitos:  
 a. Usar UDP  
-b. criar uma aplicação console que funcionará como chat ponto a ponto, onde um cliente se conecta a um servidor e troca mensagens.  
+b. Criar uma aplicação console que funcionará como chat ponto a ponto, onde um cliente se conecta a um servidor e troca mensagens.  
 c. Tanto no cliente como no servidor será possível digitar mensagens do chat a partir do console.  
 
 ## Quais as principais diferenças entre TCP e UDP?  
