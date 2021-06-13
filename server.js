@@ -6,9 +6,13 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+// List of connected sockets
 const sockets = [];
+
+// List of sockets that made a connection, but are not registered yet
 const socketsInRegistering = []
 
+// Event that handle messages that are sent to 127.0.0.1:8081
 server.on('message', (msg, rinfo) => {
     const user = getUser(rinfo);
     const message = msg.toString();
@@ -45,7 +49,7 @@ const removeUser = (user) => {
         return socket.port === user.port && socket.address === user.address
     });
     const removedUser = sockets.splice(userIndex, 1);
-    server.send('See tou later!', removedUser[0].port, removedUser[0].address);
+    server.send('See you later!', removedUser[0].port, removedUser[0].address);
     broadcastServer(`${removedUser[0].name} left the server`);
 }
 
@@ -95,5 +99,5 @@ const broadcastServer = (msg, topicUser = null) => {
     }
 }
 
-
+// Binds server to 127.0.0.1:8081
 server.bind(8081, '127.0.0.1');
